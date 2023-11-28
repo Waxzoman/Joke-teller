@@ -1,3 +1,5 @@
+
+
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
 // VoiceRSS Javascript SDK
@@ -11,7 +13,7 @@ function toggleButton() {
 //Passing Joke to VoiseRSS API
 function tellMe(joke) {
     VoiceRSS.speech({
-        key: process.env.VOICERSS_KEY,
+        key: 'ea35ea7429964fca93fd1274c5a017da',
         src: joke,
         hl: 'en-us',
         r: 0,
@@ -24,7 +26,7 @@ function tellMe(joke) {
 // Get jokes from Joke API
 async function getJokes() {
     let joke = ''
-    const apiUrl = 'https://v2.jokeapi.dev/joke/Any'
+    const apiUrl = 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit'
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
